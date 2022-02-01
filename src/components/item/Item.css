@@ -1,0 +1,21 @@
+.card{ 
+    width: 20rem;
+    margin: 5px;
+}
+.spinner{
+    animation: loader 4s ease infinite;
+}
+@keyframes loader {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.cargando{
+    font-size: 25px;
+    margin: 10px;
+    font-weight: 500;
+}

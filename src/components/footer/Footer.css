@@ -1,0 +1,21 @@
+.footer{
+    background-color: #212529;
+    color: rgba(255,255,255,.55);
+    font-size: 20px;
+}
+.footer ul li a{
+    text-decoration: none;
+    color: rgba(255,255,255,.55);
+}
+
+.footer ul{
+    font-size: 20px;
+    list-style-type: none;
+}
+
+.footer ul li a{
+    transition: color 0.3s;
+}
+.footer ul li a:hover{
+    color: white;
+}
