@@ -2,7 +2,6 @@ import { useEffect,useState } from 'react'
 import './Item.css'
 import Item from './Item'
 import loader from '../../assets/iconos/loader 28px.svg'
-import { Link } from 'react-router-dom'
 
 const DULCES =[
     {id: 1,
@@ -57,9 +56,9 @@ function ItemList(){
                 <div className='d-flex '>
                         {postres.map((dulce)=>
                             <div key={dulce.id}>
-                                <Link to={`/productos/DetalleProductos`}> 
+                            
                                     <Item postre={dulce}/>
-                                </Link> 
+                    
                             </div>
                         )}
                 </div>

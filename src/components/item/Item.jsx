@@ -1,10 +1,22 @@
 import ItemCounter from '../counter/ItemCounter'
 import './Item.css'
-
+import { useState } from 'react'
 
 
 
 const Item = (props) =>{
+    const [count, setCount] = useState(1)
+
+    function sumarItem(){
+           setCount((prevState)=>prevState +1) 
+        }
+
+    function restarItem(){
+        if(count > 1)
+            setCount((prevState)=>prevState -1)
+        }
+        
+
     return(
         
             <div className="card">
@@ -12,7 +24,8 @@ const Item = (props) =>{
                 <div className="card-body d-flex flex-column align-items-center">
                     <h5 className="card-title">{props.postre.nombre}</h5>
                     <h5>${props.postre.precio}</h5>
-                    <ItemCounter stock={8} initial={0}/>
+                    <span>{count}</span>
+                    <ItemCounter sumar={sumarItem} restar={restarItem}/>
                 </div>
             </div>
         
