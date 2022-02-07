@@ -22,9 +22,9 @@ const DULCES =[
 ]
 
 const getDulces = () => {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve)=>{
         setTimeout(() => 
-            resolve(DULCES), 4000);
+            resolve(DULCES), 1);
         })
     }
 
@@ -56,9 +56,7 @@ function ItemList(){
                 <div className='d-flex '>
                         {postres.map((dulce)=>
                             <div key={dulce.id}>
-                            
                                     <Item postre={dulce}/>
-                    
                             </div>
                         )}
                 </div>

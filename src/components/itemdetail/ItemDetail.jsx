@@ -2,6 +2,8 @@ import ItemCounter from '../counter/ItemCounter'
 
 
 const ItemDetail = (props) => {
+
+    
     return(
         <>
         <div className="row">

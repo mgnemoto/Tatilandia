@@ -1,6 +1,10 @@
+
+
 import ItemList from "../item/ItemList";
 
 function Productos(){
+
+
     return (
             <ItemList/>  
     )
