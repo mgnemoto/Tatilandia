@@ -1,6 +1,14 @@
 .nav-font{
     font-size: 20px;
+    
+    display: flex;
+        justify-content: space-around;
 }
 .imgEncabezado{
+    width: 100%;
+    margin-top: 50px;
+}
+.posicion{
+    position:fixed;
     width: 100%;
 }

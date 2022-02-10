@@ -9,7 +9,7 @@ const Item = (props) =>{
     const [counter,setCounter]=useState(1)
 
     const handleClick= ()=>{
-        addItem (props.postre, counter)
+        addItem (props.postre, counter);
     }
     
 
