@@ -2,45 +2,33 @@ import { useEffect,useState } from 'react'
 import './Item.css'
 import Item from './Item'
 import loader from '../../assets/iconos/loader 28px.svg'
+import { getFirestore } from '../../firebase'
 
-const DULCES =[
-    {id: 1,
-    nombre: "Brownie de Oreo",
-    precio: 250,
-    foto: "oreo"
-    },
-    {id: 2,
-    nombre: "Brownie de Dulce",
-    precio: 200,
-    foto: "ddl"
-    },
-    {id: 3,
-    nombre: "Brownie de Nutella",
-    precio: 300,
-    foto: "nutella"
-    }
-]
-
-const getDulces = () => {
-    return new Promise((resolve)=>{
-        setTimeout(() => 
-            resolve(DULCES), 1);
-        })
-    }
 
 function ItemList(){
     const [postres, setPostres] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(()=>{
-        setIsLoading(true);
-        getDulces()
-        .then((data)=>setPostres(data))
-        .catch((error)=>console.error(error))
-        .finally(()=>setIsLoading(false));
+
+        const db = getFirestore();
+        const productsCollection = db.collection('productos');
+        console.log(productsCollection);
+        
+        const getDataFromFirestore = async () =>{
+            setIsLoading(true);
+            try{
+            const response = await productsCollection.get();
+            setPostres(response.docs.map((doc)=>({...doc.data(), id: doc.id})));}
+            catch(err){setError(err)}
+            finally{setIsLoading(false)};
+        };
+        getDataFromFirestore();
+
     }, []);
 
-
+console.log(postres)
 
 
      return(
@@ -53,7 +41,7 @@ function ItemList(){
         ):(
             <div>
                 <h2>Productos</h2>
-                <div className='d-flex '>
+                <div className='d-flex flex-wrap justify-content-around'>
                         {postres.map((dulce)=>
                             <div key={dulce.id}>
                                     <Item postre={dulce}/>
@@ -65,4 +53,5 @@ function ItemList(){
         </>
      )   
 }
+
 export default ItemList;
