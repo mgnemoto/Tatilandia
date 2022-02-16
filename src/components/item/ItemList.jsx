@@ -14,7 +14,7 @@ function ItemList(){
 
         const db = getFirestore();
         const productsCollection = db.collection('productos');
-        console.log(productsCollection);
+        
         
         const getDataFromFirestore = async () =>{
             setIsLoading(true);
@@ -23,12 +23,12 @@ function ItemList(){
             setPostres(response.docs.map((doc)=>({...doc.data(), id: doc.id})));}
             catch(err){setError(err)}
             finally{setIsLoading(false)};
+            
         };
+        
         getDataFromFirestore();
 
     }, []);
-
-console.log(postres)
 
 
      return(

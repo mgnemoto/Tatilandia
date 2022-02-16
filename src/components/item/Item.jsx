@@ -2,6 +2,7 @@ import ItemCounter from '../counter/ItemCounter'
 import './Item.css'
 import { useCart } from '../../context/CartContext';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Item = (props) =>{
 
@@ -23,6 +24,7 @@ const Item = (props) =>{
                     <h5>${props.postre.precio}</h5>
                     <ItemCounter counter={counter} setCounter={setCounter}/>
                     <button className='btn btn-outline-success w-50 fs-6 p-1 mt-1' onClick={handleClick}>Agregar al carrito</button>
+                    <Link className='btn btn-outline-warning' to={`/Productos/${props.postre.id}`}>Ver mas...</Link>
                 </div>
             </div>
         
