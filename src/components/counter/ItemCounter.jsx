@@ -22,8 +22,8 @@ function ItemCounter ({counter,setCounter}){
           <div className='d-flex flex-column align-items-center'>
             <span>{counter}</span>
             <div>
-              <button className="btn btn-danger" onClick={restarItem}>-</button>
-              <button className="btn btn-success" onClick={sumarItem}>+</button>
+              <button className="btn btn-outline-danger" onClick={restarItem}>-</button>
+              <button className="btn btn-outline-success" onClick={sumarItem}>+</button>
             </div>
           </div>
         </div>

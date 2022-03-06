@@ -5,20 +5,6 @@ export const CartContext = createContext([]);
 export const CartProvider = ({children})=>{
     
 
-
-    // const [total, setTotal]=useState(0);
-
-    //  const valorTotal = (precio) => {
-    //     const arr = total
-    //     setTotal(arr + precio)
-    //  }
-
-    // const cartButton = () =>{
-    //     
-
-    //     setCartCounter((prevState) => prevState +1)
-    // }
-
     const [cart, setCart]= useState ([]);
     const [cartCounter, setCartCounter] = useState(0);
 
@@ -28,9 +14,24 @@ export const CartProvider = ({children})=>{
     }
 
     const addItem = (item,quantity) =>{
-        setCartCounter ((p)=>p+quantity)
+        const itemIsInCart = cart.some((order)=>order.item.id ===item.id);
         const newItem = {item, quantity};
-        setCart ((prevState)=> [...prevState, newItem]);
+        if (itemIsInCart) {
+            // Modificar la cantidad
+            const updatedCart = cart.map((order) => {
+              if (order.item.id === item.id) {
+                return { ...order, quantity: quantity + order.quantity };
+              } else {
+                return order;
+              }
+            });
+            setCart(updatedCart);
+          } else {
+            // Agregar nuevo elemento
+            setCart ((prevState)=> [...prevState, newItem]);
+          }
+       
+        setCartCounter ((p)=>p+quantity);
     };
 
     return (

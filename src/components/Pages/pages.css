@@ -1,3 +1,47 @@
 .itemCarrito{
     border: solid 1px black;
 }
+.homeCard{
+    width: 45% !important;
+}
+.instagramColor{
+    background-image: linear-gradient(to top right,#002296,#82008f,#c0007a,#ea0c5f,#ff5341,#ff8820,#f6ba00);
+    color: white;
+    width: 15%;
+}
+.whatsappCard{
+    background-color:#25d366;
+}
+.waButton{
+    width: 80px;
+}
+.waButtonDetalle{
+    width: 120px;
+}
+.mapa{
+    width: 100%;
+    height: 80%;
+}
+.instagramCard{
+    background-image: linear-gradient(to bottom left,#002296,#82008f,#c0007a,#ea0c5f,#ff5341,#ff8820,#f6ba00);
+}
+body{
+    background-image: linear-gradient(to bottom,#f5ad92,#ed717f,#c67486,#765e8d,#00577f);
+}
+
+.paddingID{padding: 7%;}
+
+@media only screen and (min-width: 0px) and (max-width: 576px){
+    .cardDescription{
+        display: none;
+    }
+    .mapa{
+        width: 100%;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 768px){
+    .cardDes{
+        display: none;
+    }
+}

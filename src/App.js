@@ -7,6 +7,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import DetalleProductos from './components/Pages/DetalleProductos.jsx'
 import { CartProvider } from './context/CartContext';
+import DetalleCompra from './components/Pages/DetalleCompra.jsx'
 
 
 
@@ -23,6 +24,7 @@ function App() {
               <Route path=":productId" element={<DetalleProductos/>}/>
             </Route>
             <Route path="carrito" element={<Carrito/>}/>
+            <Route path="DetalleCompra/:oderId" element={<DetalleCompra/>} />
         </Route>
       </Routes>
       <Footer/>

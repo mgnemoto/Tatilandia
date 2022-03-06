@@ -1,7 +1,7 @@
 import ItemCounter from '../counter/ItemCounter'
 import { useCart } from '../../context/CartContext';
 import { useState } from 'react';
-
+import './ItemDetail.css'
 const ItemDetail = ({postre}) => {
 
     const {addItem}=useCart();
@@ -14,7 +14,7 @@ const ItemDetail = ({postre}) => {
     
     return(
         <>
-        <div className="row">
+        <div className="row itemDetail">
             <div className="d-flex flex-column col-lg-7 m-0">
                 <h2 className='mb-5 mt-5'>{postre.nombre}</h2>
                 <img src={require('../../assets/postres/' +postre.foto)} className="card-img-top w-75 m-2 borde" alt="..."/>
@@ -27,7 +27,7 @@ const ItemDetail = ({postre}) => {
                 </div>
                 <div className='padCount'>
                     <ItemCounter counter={counter} setCounter={setCounter}/>
-                    <button className='btn btn-outline-success w-50 fs-6 p-1 mt-1' onClick={handleClick}>Agregar al carrito</button>
+                    <button className='btn btn-outline-success w-100 fs-6 p-1 mt-1' onClick={handleClick}>Agregar al carrito</button>
                 </div>
             </div>
         </div>
