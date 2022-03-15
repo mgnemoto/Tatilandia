@@ -47,19 +47,23 @@ function Carrito(){
     return (
     <div>
         <h2>Carrito</h2>
-        
+        <div className='d-flex flex-column align-items-center'>
         {cart.map((purchase)=>{
             return (
                 <>
-                    <div className='d-flex flex-column align-items-center itemCarrito' key={purchase.item.id}>
-                        <p className='mt-1 fw-bold'>{purchase.quantity} x {purchase.item.nombre}</p>
-                        <img src={require('../../assets/postres/' +purchase.item.foto)} className="w-25" alt="..."/>
-                        <p className='mt-1'>${purchase.quantity*purchase.item.precio}</p>
+                <div className="card shadow p-2" key={purchase.item.id}>
+                    <img src={require('../../assets/postres/' +purchase.item.foto)} className="card-img-top" alt="..."/>
+                    <div className="card-body">
+                        <h5 className="card-title">{purchase.quantity} x {purchase.item.nombre}</h5>
+                        <p className="card-text">${purchase.quantity*purchase.item.precio}</p>
                         <button className='mb-1 btn btn-danger' onClick={()=>removeItem(purchase.item.id,purchase.quantity)}>Borrar producto</button>
                     </div>
+                </div>
                 </>
                     )
+                
         })}
+        </div>
         <h2 className='text-white'>Total = {getTotal(cart)}</h2>
         <h2 className='text-white'>Introduzca sus datos:</h2>
         <form onSubmit={handleSubmit}>
