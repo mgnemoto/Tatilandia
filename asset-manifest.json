@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Tatilandia/static/css/main.9040d9e4.css",
-    "main.js": "/Tatilandia/static/js/main.e45fbdb8.js",
+    "main.js": "/Tatilandia/static/js/main.f46df388.js",
     "static/js/787.02972151.chunk.js": "/Tatilandia/static/js/787.02972151.chunk.js",
     "static/media/naranja.jpg": "/Tatilandia/static/media/naranja.19cbf328d51ffe6c46ee.jpg",
     "static/media/choco chispas.jpg": "/Tatilandia/static/media/choco chispas.26f4534bbd0f6e11864a.jpg",
@@ -25,11 +25,11 @@
     "static/media/loader 28px.svg": "/Tatilandia/static/media/loader 28px.978748c53b079372cf78dd7dafacd602.svg",
     "static/media/carrito blanco 24 3.svg": "/Tatilandia/static/media/carrito blanco 24 3.8b305b801be8f5cc97edd5f93bd833c0.svg",
     "main.9040d9e4.css.map": "/Tatilandia/static/css/main.9040d9e4.css.map",
-    "main.e45fbdb8.js.map": "/Tatilandia/static/js/main.e45fbdb8.js.map",
+    "main.f46df388.js.map": "/Tatilandia/static/js/main.f46df388.js.map",
     "787.02972151.chunk.js.map": "/Tatilandia/static/js/787.02972151.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9040d9e4.css",
-    "static/js/main.e45fbdb8.js"
+    "static/js/main.f46df388.js"
   ]
 }
